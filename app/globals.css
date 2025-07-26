@@ -4,6 +4,15 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+@font-face {
+    font-family: 'Shabnam';
+    src: url('/public/fonts/Shabnam.woff2') format('woff2'),
+         url('/public/fonts/Shabnam.woff') format('woff'),
+         url('/public/fonts/Shabnam.ttf') format('truetype')و
+         url('/public/fonts/Shabnam.eof') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } 
 
 @theme inline {
   --color-background: var(--background);
@@ -22,5 +31,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Shabnam' ,Arial, Helvetica, sans-serif;
 }
