@@ -1,8 +1,5 @@
 import moment from "moment-jalaali";
 
-// فعال‌سازی فارسی مدرن (مثلاً شنبه تا جمعه)
-moment.loadPersian({ dialect: "persian-modern", usePersianDigits: false });
-
 export function getWeekDates(startOfWeek: moment.Moment) {
   type Day = {
     dayName: string;
@@ -17,7 +14,7 @@ export function getWeekDates(startOfWeek: moment.Moment) {
   for (let i = 0; i < 7; i++) {
     const day = startOfWeek.clone().add(i, "days");
     week.push({
-      dayName: day.format("dddd")[0],
+      dayName: day.format("dddd"),
       jDate: day.format("jYYYY/jMM/jDD"),
       gDate: day.format("YYYY-MM-DD"),
       isToday: day.isSame(moment(), "day"),

@@ -9,7 +9,7 @@
     src: url('/public/fonts/Shabnam.woff2') format('woff2'),
          url('/public/fonts/Shabnam.woff') format('woff'),
          url('/public/fonts/Shabnam.ttf') format('truetype')و
-         url('/public/fonts/Shabnam.eof') format('truetype');
+         url('/public/fonts/Shabnam.eot') format('truetype');
     font-weight: normal;
     font-style: normal;
   } 
@@ -32,4 +32,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Shabnam' ,Arial, Helvetica, sans-serif;
+}
+
+/* --- WebKit browsers (Chrome, Safari, Edge) --- */
+::-webkit-scrollbar {
+  width: 8px;             /* ضخامت اسکرول عمودی */
+  height: 8px;            /* ضخامت اسکرول افقی */
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(172, 172, 172, 0.5); /* رنگ خاکستری شفاف */
+  border-radius: 10px;
+  border: 2px solid transparent;  /* فاصله داخلی برای کمی لبه نرم */
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+/* --- Firefox --- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.5) transparent;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
 }

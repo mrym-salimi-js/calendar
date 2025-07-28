@@ -1,8 +1,5 @@
 import moment from "moment-jalaali";
 
-// فعال‌سازی فارسی مدرن (مثلاً شنبه تا جمعه)
-moment.loadPersian({ dialect: "persian-modern", usePersianDigits: false });
-
 export function getWeekStart(baseDate: moment.Moment) {
   //    امروز چندمین روز هفتس؟: مثلا سه شنبه = 2
   const currentDay = baseDate.day();
