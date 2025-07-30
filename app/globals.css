@@ -6,10 +6,10 @@
 }
 @font-face {
     font-family: 'Shabnam';
-    src: url('/public/fonts/Shabnam.woff2') format('woff2'),
-         url('/public/fonts/Shabnam.woff') format('woff'),
-         url('/public/fonts/Shabnam.ttf') format('truetype')و
-         url('/public/fonts/Shabnam.eot') format('truetype');
+    src: 
+         url('/fonts/Yekan/Yekan.woff') format('woff'),
+         url('/fonts/Yekan/Yekan.ttf') format('truetype')و
+         url('/fonts/Yekan/Yekan.eot') format('truetype');
     font-weight: normal;
     font-style: normal;
   } 

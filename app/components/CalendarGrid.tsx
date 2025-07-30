@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { Week } from "./Week";
 
 export default function CalendarGrid() {
@@ -8,7 +7,7 @@ export default function CalendarGrid() {
   const days = ["ش", "ی", "د", "س", "چ", "پ", "ج"];
 
   return (
-    <div className="px-8 h-[90vh] overflow-y-auto font-sans">
+    <div className="px-8 h-[67vh] overflow-y-auto font-sans">
       {/* Days row */}
       <Week />
       {/* Time rows */}

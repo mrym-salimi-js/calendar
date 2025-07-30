@@ -1,25 +1,31 @@
 "useclient";
 
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement, useContext, useEffect } from "react";
 import moment from "moment-jalaali";
+import { ViewContext } from "../page";
 
 type DataLableProps = {
-  view: "MONTH" | "WEEK" | "YEAR" | "DAY";
+  view: string;
   setDateLable: React.Dispatch<React.SetStateAction<string>>;
   dateLable: string;
 };
-export default function DateLable({
-  view = "MONTH",
+
+export default function CalendarLable({
   setDateLable,
   dateLable,
 }: DataLableProps): ReactElement {
+  const view = useContext(ViewContext);
+
   const currentMonthName = moment().format("jMMMM");
   const currentYear = moment().format("jYYYY");
+
   useEffect(() => {
-    view === "YEAR"
-      ? setDateLable(currentYear)
-      : setDateLable(currentMonthName);
-  }, [dateLable]);
+    if (view === "Year") {
+      setDateLable(currentYear);
+    } else {
+      setDateLable(currentMonthName);
+    }
+  }, []);
 
   return (
     <div className="w-full flex items-center justify-between ">
