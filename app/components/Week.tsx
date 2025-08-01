@@ -20,23 +20,32 @@ export function Week(): ReactElement {
 
   return (
     <>
-      <div className="sticky top-0 z-10  py-2.5 bg-white">
-        <div className="grid grid-cols-[40px_repeat(7,_1fr)]  ">
-          <div className="w-16" />
+      <div className="w-auto sticky top-0 z-10  py-2.5 bg-white">
+        <div className="grid grid-cols-[40px_repeat(7,_1fr)] gap-0.5  ">
+          <div className="flex items-center justify-center"></div>
           {week.map((day, index) => (
             <div
               key={day.dayName}
-              className={`text-center rounded-2xl p-2  flex flex-col gap-1 ${
+              className={` text-center rounded-sm lg:rounded-xl p-2  flex flex-col gap-1 ${
                 currentDayIndex === index ? `bg-gray-100` : `bg-transparent`
               } `}
             >
               <p
-                className={` text-[0.7rem] ${
+                className={`text-sm block md:hidden ${
+                  index === 6 ? `text-red-700` : `text-gray-600`
+                }`}
+              >
+                {day.dayName?.charAt(0)}
+              </p>
+
+              <p
+                className={`text-sm hidden md:block  ${
                   index === 6 ? `text-red-700` : `text-gray-600`
                 }`}
               >
                 {day.dayName}
               </p>
+
               <p className={`${index === 6 ? `text-red-700` : `text-black`}`}>
                 {day.jDate?.slice(-2)}
               </p>

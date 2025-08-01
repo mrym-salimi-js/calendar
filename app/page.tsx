@@ -1,34 +1,36 @@
 "use client";
 import { ReactElement, useEffect, useState } from "react";
 import CalendarGrid from "./components/CalendarGrid";
-import CalendarLable from "./components/CalendarLable";
 import moment from "moment-jalaali";
-import Views from "./components/Views";
 import { createContext } from "react";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export const ViewContext = createContext({});
 
 moment.loadPersian({ dialect: "persian-modern", usePersianDigits: false });
+type View = string | null;
 
 export default function Home(): ReactElement {
-  const [dateLable, setDateLable] = useState<string>("");
-  const [view, setView] = useState<string>("");
+  const [view, setView] = useState<View>("هفته");
+
+  const [expand, setExpand] = useState<boolean>(false);
 
   useEffect(() => {
-    const view: string = localStorage.getItem("view");
+    const view: View = localStorage.getItem("view");
     setView(view);
   }, []);
 
   return (
-    <ViewContext.Provider value={{ view }}>
-      <main className=" min-h-screen bg-white" dir="rtl">
-        <div className="flex flex-col gap-2 items-center justify-center  p-8 bg-gray-50">
-          {/* Views btn box */}
-          <Views />
-          <div className="w-full flex flex-col gap-4 p-8 bg-white rounded-[15px] border border-gray-100 ">
-            <CalendarLable setDateLable={setDateLable} dateLable={dateLable} />
-            <CalendarGrid />
-          </div>
+    <ViewContext.Provider value={{ view, expand, setExpand }}>
+      <main
+        className="min-h-screen lg:flex lg:justify-center bg-[#fbfbfb8f] "
+        dir="rtl"
+      >
+        <div className="lg:w-[90%] relative  flex flex-col items-center gap-2.5  p-3 lg:px-8 ">
+          <Header />
+          <CalendarGrid />
+          <Footer />
         </div>
         {/* <h1 className="text-white text-2xl font-bold px-4 py-4">My Calendar</h1> */}
       </main>

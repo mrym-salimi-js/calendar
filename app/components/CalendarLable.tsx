@@ -3,12 +3,13 @@
 import React, { ReactElement, useContext, useEffect } from "react";
 import moment from "moment-jalaali";
 import { ViewContext } from "../page";
+import { ChevronLeft, ChevronRight } from "./Icons";
 
 type DataLableProps = {
-  view: string;
   setDateLable: React.Dispatch<React.SetStateAction<string>>;
   dateLable: string;
 };
+// type View = string | null;
 
 export default function CalendarLable({
   setDateLable,
@@ -28,8 +29,18 @@ export default function CalendarLable({
   }, []);
 
   return (
-    <div className="w-full flex items-center justify-between ">
-      <h1 className="w-full text-xl text-center">{dateLable}</h1>
+    <div className="w-auto gap-3.5 flex items-center justify-between ">
+      <ChevronRight
+        color={"#000000"}
+        size={"size-7 cursor-pointer"}
+        strokeWidth={3}
+      />
+      <h1 className="w-full text-lg text-center">{dateLable}</h1>
+      <ChevronLeft
+        color={"#000000"}
+        size={"size-7 cursor-pointer"}
+        strokeWidth={3}
+      />
     </div>
   );
 }

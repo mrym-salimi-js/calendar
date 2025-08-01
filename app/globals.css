@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+
 @font-face {
     font-family: 'Shabnam';
     src: 
@@ -32,6 +33,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Shabnam' ,Arial, Helvetica, sans-serif;
+
 }
 
 /* --- WebKit browsers (Chrome, Safari, Edge) --- */
@@ -59,6 +61,7 @@ body {
 /* --- Firefox --- */
 * {
   scrollbar-width: thin;
+  
   scrollbar-color: rgba(100, 100, 100, 0.5) transparent;
 }
 

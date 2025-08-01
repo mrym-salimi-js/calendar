@@ -31,7 +31,7 @@ export default function SimpleListModal({
     <AnimatePresence>
       {listToggle && (
         <motion.div
-          className={`w-28 h-auto flex flex-col gap-2 items-center justify-between overflow-hidden p-2  bg-white rounded-[15px] border border-gray-100 absolute top-14 right-18 z-20 `}
+          className={`w-28 h-auto flex flex-col gap-2 items-center justify-between overflow-hidden p-2  bg-white rounded-[15px] border border-gray-100 absolute top-30 right-20 z-20 `}
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.96 }}

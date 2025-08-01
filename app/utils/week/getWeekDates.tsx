@@ -1,13 +1,12 @@
 import moment from "moment-jalaali";
+type Day = {
+  dayName: string;
+  jDate: string;
+  gDate: string;
+  isToday: boolean;
+};
 
 export function getWeekDates(startOfWeek: moment.Moment) {
-  type Day = {
-    dayName: string;
-    jDate: string;
-    gDate: string;
-    isToday: boolean;
-  };
-
   const week: Day[] = [];
 
   // گرفتن تاریخ هر 7 روز هفته با حلقه فور براساس اولین روز هفته

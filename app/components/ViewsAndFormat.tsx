@@ -4,10 +4,12 @@ import { Calendar, World } from "./Icons";
 import SimpleListModal from "./SimpleListModal";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
-export default function Views(): ReactElement {
+type ListType = { en: string; fa: string }[];
+
+export default function ViewsAndFormat(): ReactElement {
   const [viewToggle, setViewToggle] = useState<boolean>(false);
   const [formatToggle, setFormatToggle] = useState<boolean>(false);
-  type ListType = { en: string; fa: string }[];
+
   const views: ListType = [
     { en: "Week", fa: "هفته" },
     { en: "Month", fa: "ماه" },
@@ -23,11 +25,11 @@ export default function Views(): ReactElement {
     setViewToggle(false);
     setFormatToggle(false);
   });
-  const handleViewToggle = () => {
+  const handleViewToggle: () => void = () => {
     setViewToggle(!viewToggle);
     if (formatToggle) setFormatToggle(false);
   };
-  const handleFormatToggle = () => {
+  const handleFormatToggle: () => void = () => {
     setFormatToggle(!formatToggle);
     if (viewToggle) setViewToggle(false);
   };
